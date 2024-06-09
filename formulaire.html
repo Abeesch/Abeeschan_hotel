@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de réservation</title>
+    <link rel="stylesheet" type="text/css" href="../css/formulaire_style.css">
+</head>
+<body>
+    <div class="header-banner">
+        <h1>BOOKING HOTEL</h1>
+        <p>Indiquez vos dates de réservation - Toute annulation doit se faire 48h avant</p>
+    </div>
+    <div class="content">
+        <div class="form-container">
+            <form id="reservation-form">
+                <div class="header">
+                    <div class="hotel-icon"></div>
+                    <div class="title">France - Etranger</div>
+                </div>
+                <div class="form-group">
+                    <label for="lieu-sejour">Lieu de séjour</label>
+                    <input type="text" id="lieu-sejour" name="lieu-sejour" placeholder="Lieu du séjour">
+                </div>
+                <div class="form-group">
+                    <label for="arrivee">Arrivée</label>
+                    <input type="text" id="arrivee" name="arrivee" placeholder="jj/mm/aaaa">
+                </div>
+                <div class="form-group">
+                    <label for="depart">Départ</label>
+                    <input type="text" id="depart" name="depart" placeholder="jj/mm/aaaa">
+                </div>
+                <div class="form-group">
+                    <label>Adulte</label>
+                    <div class="counter">
+                        <button type="button" onclick="decrease('adult')">-</button>
+                        <input type="text" id="adult" value="0" readonly>
+                        <button type="button" onclick="increase('adult')">+</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Enfant</label>
+                    <div class="counter">
+                        <button type="button" onclick="decrease('child')">-</button>
+                        <input type="text" id="child" value="0" readonly>
+                        <button type="button" onclick="increase('child')">+</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Chambre</label>
+                    <div class="counter">
+                        <button type="button" onclick="decrease('room')">-</button>
+                        <input type="text" id="room" value="0" readonly>
+                        <button type="button" onclick="increase('room')">+</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="search-btn" onclick="search()">Rechercher</button>
+                    <button type="button" class="reset-btn" onclick="resetForm()">Effacer</button>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="work-travel" name="work-travel">
+                    <label for="work-travel">Je voyage pour le travail</label>
+                </div>
+            </form>
+        </div>
+        <div class="confirmation-container">
+            <h2>Confirmation réservation</h2>
+            <p>Nombre(s) d'adulte(s) : <span id="conf-adult">0</span></p>
+            <p>Nombre(s) d'enfant(s) : <span id="conf-child">0</span></p>
+            <p>Nombre(s) de chambre(s) : <span id="conf-room">0</span></p>
+            <p>Voyage pour le travail : <span id="conf-work"></span></p>
+        </div>
+    </div>
+    <div class="footer-banner">
+        <p>Indiquez vos dates de réservation - Toute annulation doit se faire avant 48h</p>
+    </div>
+ <script>
+   function increase(type) {
+    let input = document.getElementById(type);
+    input.value = parseInt(input.value) + 1;
+}
+
+function decrease(type) {
+    let input = document.getElementById(type);
+    if (parseInt(input.value) > 0) {
+        input.value = parseInt(input.value) - 1;
+    }
+}
+
+function resetForm() {
+    document.getElementById('reservation-form').reset();
+    document.getElementById('adult').value = 0;
+    document.getElementById('child').value = 0;
+    document.getElementById('room').value = 0;
+    updateConfirmation();
+}
+
+function search() {
+    updateConfirmation();
+}
+
+function updateConfirmation() {
+    document.getElementById('conf-adult').innerText = document.getElementById('adult').value;
+    document.getElementById('conf-child').innerText = document.getElementById('child').value;
+    document.getElementById('conf-room').innerText = document.getElementById('room').value;
+    document.getElementById('conf-work').innerText = document.getElementById('work-travel').checked ? "Oui" : "Non";
+}
+
+ </script>
+</body>
+</html>

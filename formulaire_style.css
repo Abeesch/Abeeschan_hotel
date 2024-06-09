@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../img/fond_hotel.jpg');
+    background-size: cover;
+    margin: 0;
+}
+
+.hotel-icon {
+    background-image: url('../img/hotel_png.png');
+    background-size: 200px 100px;
+    background-repeat: no-repeat;
+}
+
+.header-banner, .footer-banner {
+    background-color: #f87100;
+    text-align: center;
+    padding: 10px;
+}
+
+.header-banner h1 {
+    margin: 0;
+    color: #0000FF;
+}
+
+.header-banner p, .footer-banner p {
+    margin: 5px 0;
+    color: white;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.form-container, .confirmation-container {
+    background-color: orange;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    color: white;
+}
+
+.confirmation-container {
+    background-color: orange;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.hotel-icon {
+    font-size: 24px;
+}
+
+.title {
+    font-size: 18px;
+    color: #ed2902;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+}
+
+.counter button {
+    width: 30px;
+    height: 30px;
+    background-color: #ed2902;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.counter input {
+    width: 50px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+}
+
+.search-btn, .reset-btn {
+    width: calc(50% - 10px);
+    padding: 10px;
+    background-color: #0000FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    margin: 5px;
+}
+
+.reset-btn {
+    background-color: #0000FF;
+}
